@@ -15,7 +15,8 @@ class MessageForm extends Component {
     if (this.messageIsSubmittable()) { 
       this.props.appendMessage({
         content: this.state.message,
-        username: "emikaijuin" // hardcoding to be replaced later
+        username: "emikaijuin", // hardcoding to be replaced later
+        timestamp: Date.now()
       }) 
       this.setState({message: ''})
     }
@@ -30,12 +31,25 @@ class MessageForm extends Component {
     return (
       <form onSubmit={ this.sendMessage }>
         <div>  
-          <input 
-            type = "text" 
+          <textarea 
             onChange = { this.handleMessageInput}
             value = { this.state.message }
+            style = {{
+              position: "absolute",
+              height: "15%",
+              width: "80%",
+              boxSizing: "border-box",
+              border: "0",
+              outline: "none"
+            }}
           />
-          <span>{ this.messageIsSubmittable() ? "" : "Max length is 500 characters"}</span>
+          <span style={{
+            position: "absolute",
+            bottom: "2.5%",
+            color: "red"
+          }}>
+            { this.messageIsSubmittable() ? "" : "Max length is 500 characters"}
+          </span>
         </div>
       </form>
     )
