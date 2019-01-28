@@ -10,7 +10,7 @@ class MessageForm extends Component {
     this.setState({ message: event.target.value })
   }
 
-  handleFormSubmit = event => {
+  sendMessage = event => {
     event.preventDefault()
     if (this.messageIsSubmittable()) { 
       this.props.appendMessage({
@@ -28,7 +28,7 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <form onSubmit={ this.handleFormSubmit }>
+      <form onSubmit={ this.sendMessage }>
         <div>  
           <input 
             type = "text" 

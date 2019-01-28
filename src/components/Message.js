@@ -2,7 +2,12 @@ import React from "react"
 
 const Message = props => (
   <div>
-    { props.message } 
+    <span>
+      {props.username}
+    </span>
+    <div>
+      { props.message } 
+    </div>
   </div>
 )
 

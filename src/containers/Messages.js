@@ -5,10 +5,10 @@ class Messages extends Component {
   state = {}
 
   returnMessages = () => {
-    console.log(this.props.messages)
     return this.props.messages.map( message => (
       <Message 
-        message={message} 
+        message={message.content} 
+        username={message.username}
       />
     ))
   }
