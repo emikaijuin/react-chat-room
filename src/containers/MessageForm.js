@@ -13,7 +13,10 @@ class MessageForm extends Component {
   handleFormSubmit = event => {
     event.preventDefault()
     if (this.messageIsSubmittable()) { 
-      this.props.appendMessage(this.state.message) 
+      this.props.appendMessage({
+        content: this.state.message,
+        username: "emikaijuin" // hardcoding to be replaced later
+      }) 
       this.setState({message: ''})
     }
   }
