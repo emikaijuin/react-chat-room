@@ -55,6 +55,17 @@ class Messages extends Component {
     ))
   }
 
+  returnSelectMessagePrompt = () => (
+    <div style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%,-50%)"
+    }}>
+      Select a conversation from the sidebar! 
+    </div>
+  )
+
   render() {
     return (
       <div
@@ -64,7 +75,7 @@ class Messages extends Component {
         }}
       >
         <div>
-          { this.returnMessages() }
+          { this.props.conversationId ? this.returnMessages() : this.returnSelectMessagePrompt() }
         </div>
         <div style={{ float:"left", clear: "both" }}
              ref={(el) => { this.messagesEnd = el; }}>
