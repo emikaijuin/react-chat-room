@@ -5,7 +5,12 @@ import Conversations from "../containers/Conversations"
 
 class ChatRoom extends Component {
   state = {
-    messages: [],
+    messages: [
+      {username: 'emikaijuin', content: 'What did the ocean say to another ocean?', timestamp: 1544532325758},
+      {username: 'Liren', content: 'sea you later?', timestamp: 1544532341078},
+      {username: 'emikaijuin', content: 'Nothing. It just waved', timestamp: 1544532347412},
+      {username: 'Josh', content: "I'm leaving this chatroom", timestamp: 1544532402998},
+    ],
     conversationId: 0
   }
 
@@ -32,7 +37,7 @@ class ChatRoom extends Component {
           <div className="messages-content">
             <Messages 
               messages = {this.state.messages} 
-              />
+            />
           </div>
           <div className="message-form">
             <MessageForm 

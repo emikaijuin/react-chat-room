@@ -1,11 +1,19 @@
 import React from "react"
 
 const Message = props => (
-  <div>
-    <span>
+  <div 
+    className="message"
+    style = { props.style } 
+  >
+    <span style={{
+      float: props.centered,
+      color: "gray"
+    }}>
       {props.username}
     </span>
-    <div>
+    <div style={{
+      clear: "both"
+    }}>
       { props.message } 
     </div>
   </div>

@@ -47,7 +47,8 @@ class MessageForm extends Component {
             width: "75%",
             boxSizing: "border-box",
             border: "0",
-            outline: "none"
+            outline: "none",
+            padding: "20px"
           }}
         />
         <input 
