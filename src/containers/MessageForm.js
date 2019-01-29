@@ -36,23 +36,20 @@ class MessageForm extends Component {
   render() {
     return (
       <form onSubmit = { this.sendMessage } >
-        {/* <label> */}
-          {/* Message:  */}
-          <textarea
-            type = "text"
-            onKeyDown = { this.checkForSubmit } // text areas don't submit form on enter, so additional event listener is added on key down to check if user hit enter iwthout shift
-            onChange = { this.handleMessageInput} 
-            value = { this.state.message }
-            style = {{
-              position: "absolute",
-              height: "15%",
-              width: "75%",
-              boxSizing: "border-box",
-              border: "0",
-              outline: "none"
-            }}
-          />
-        {/* </label> */}
+        <textarea
+          type = "text"
+          onKeyDown = { this.checkForSubmit } // text areas don't submit form on enter, so additional event listener is added on key down to check if user hit enter iwthout shift
+          onChange = { this.handleMessageInput} 
+          value = { this.state.message }
+          style = {{
+            position: "absolute",
+            height: "15%",
+            width: "75%",
+            boxSizing: "border-box",
+            border: "0",
+            outline: "none"
+          }}
+        />
         <input 
           type="submit"
           className="btn btn-outline-info"
