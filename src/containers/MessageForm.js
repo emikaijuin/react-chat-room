@@ -29,7 +29,7 @@ class MessageForm extends Component {
   }
 
   messageIsSubmittable = () => (
-    this.state.message.length < 500 ? true : false
+    this.state.message && this.state.message.length < 500 ? true : false
   )
 
 
@@ -52,21 +52,22 @@ class MessageForm extends Component {
           }}
         />
         <input 
-          type="submit"
-          className="btn btn-outline-info"
-          style={{
+          type = "submit"
+          className = "btn btn-outline-info"
+          style = {{
             position: "absolute",
             right: "0",
             bottom: "10%",
             transform: "translate(-25%, 50%)"
           }}
+          disabled = { !this.messageIsSubmittable() }
           />
         <span style={{
           position: "absolute",
           bottom: "2.5%",
           color: "red"
         }}>
-          { this.messageIsSubmittable() ? "" : "Max length is 500 characters"}
+          { this.state.message && !this.messageIsSubmittable() ? "Max length is 500 characters" : ""}
         </span>
       </form>
     )

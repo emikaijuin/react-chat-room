@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import Message from "../components/Message";
 
-
 class Messages extends Component {
   state = {
     currentUser: "emikaijuin" // temporary until connected to server
@@ -23,9 +22,8 @@ class Messages extends Component {
     {
       padding: "20px",
       borderRadius: "10px",
-      maxWidth: "50%",
-      boxSizing: "border-box",
-      marginBottom: "15px"
+      maxWidth: "80%",
+      boxSizing: "border-box"
     }
   )
   currentUserStyle = () => (
@@ -45,8 +43,7 @@ class Messages extends Component {
       clear: "both"
     }
   )
-
-
+  
   returnMessages = () => {
     return this.props.messages.map( (message) => (
       <Message
@@ -61,6 +58,7 @@ class Messages extends Component {
   render() {
     return (
       <div
+        className = "messages"
         style = {{
           padding: "50px"
         }}

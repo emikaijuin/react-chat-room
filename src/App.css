@@ -34,9 +34,18 @@ body {
 
 
   /*  MOBILE DESIGN  */
-  @media(max-width: 576px) {
+  @media(max-width: 1024px) {
+
+    .messages {
+      padding: 15px !important;
+    }
+
     .message {
-      max-width: 100% !important;
       width: 100%;
+    }
+
+    .message-avatar {
+      margin: 0 5px !important;
+      height: 1.5rem !important;
     }
   }
