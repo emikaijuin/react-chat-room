@@ -23,6 +23,7 @@ class Conversations extends Component {
               <Conversation 
                 conversation = { conversation } 
                 selectActiveConversation = { this.props.selectActiveConversation }
+                isActive = {conversation.id == this.props.activeConversationId ? true : false}
               />
             ))
           }

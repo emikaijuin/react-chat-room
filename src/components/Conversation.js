@@ -24,7 +24,7 @@ const Conversation = props => (
         borderRadius: "100%"
       }}
     />
-    <div className = "conversation-name" 
+    <div className = {`conversation-name ${props.isActive ? "active-conversation" : ""}`}
       style = {{
         padding: "10px 0"
       }}

@@ -18,6 +18,16 @@ body {
   .conversation:hover{
     cursor: pointer;
   }
+
+  .active-conversation {
+    font-weight: 500;
+    color: teal;
+  }
+
+  .desktop-conversation-name {
+    display: block;
+  }
+
 /* Messages Container */
 .messages-container {
   height: 100%;
@@ -31,7 +41,6 @@ body {
     overflow-y: auto;
     position: relative;
   }
-
 
   /*  MOBILE DESIGN  */
   @media(max-width: 1024px) {
@@ -47,5 +56,9 @@ body {
     .message-avatar {
       margin: 0 5px !important;
       height: 1.5rem !important;
+    }
+
+    .desktop-conversation-name {
+      display: none;
     }
   }

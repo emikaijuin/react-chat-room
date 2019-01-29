@@ -83,6 +83,7 @@ class ChatRoom extends Component {
           <Conversations 
             selectActiveConversation = { this.selectActiveConversation }
             conversations = { this.getUserConversations() } 
+            activeConversationId = { this.state.activeConversationId }
 
           />
         </div>
