@@ -9,7 +9,7 @@ class ChatRoom extends Component {
     super(props)
     this.state = {
       messages: [],
-      activeConversationId: null,
+      activeConversationId: "all",
       username: '',
       members: []
     }
