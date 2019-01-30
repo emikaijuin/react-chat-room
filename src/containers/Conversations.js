@@ -11,7 +11,9 @@ class Conversations extends Component {
       <div style = {{
         display: "flex",
         flexWrap: "wrap",
-        alignContent: "center"
+        alignContent: "center",
+        height: "100%",
+        overflowY: "auto"
       }} >
         <ul style = {{
           width: "70%",

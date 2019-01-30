@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Socket from '../utils/socket'
 
 class MessageForm extends Component {
   state = {
@@ -18,12 +19,13 @@ class MessageForm extends Component {
 
   sendMessage = event => {
     event.preventDefault()
-    if (this.messageIsSubmittable()) { 
-      this.props.appendMessage({
-        content: this.state.message,
-        username: "emikaijuin", // hardcoding to be replaced later
+    if (this.messageIsSubmittable()) {
+      Socket.emit('BROADCAST_MESSAGE', {
+        username: this.props.username,
+        message: this.state.message,
         timestamp: Date.now()
-      }) 
+      })
+
       this.setState({message: ''})
     }
   }

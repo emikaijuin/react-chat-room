@@ -3,7 +3,6 @@ import Message from "../components/Message";
 
 class Messages extends Component {
   state = {
-    currentUser: "emikaijuin" // temporary until connected to server
   }
 
   componentDidUpdate() {
@@ -15,7 +14,7 @@ class Messages extends Component {
   }
 
   isCurrentUser = messageUsername => {
-    return messageUsername === this.state.currentUser ? true : false 
+    return messageUsername === this.props.username ? true : false 
   }
 
   allMessagesStyle = () => (
@@ -47,7 +46,7 @@ class Messages extends Component {
   returnMessages = () => {
     return this.props.messages.map( (message) => (
       <Message
-        message = { message.content } 
+        message = { message.message } 
         username = { message.username }
         style = {this.isCurrentUser(message.username) ? this.currentUserStyle() : this.otherUserStyle()}
         centered = {this.isCurrentUser(message.username) ? "right" : "left" }
