@@ -26,8 +26,10 @@ class Conversations extends Component {
                 conversation = { conversation } 
                 selectActiveConversation = { this.props.selectActiveConversation }
                 isActive = {conversation.id == this.props.activeConversationId ? true : false}
+                shake = {this.props.shake}
+                removeShake = {this.props.removeShake}
               />
-            ))
+            )) 
           }
         </ul>
       </div>

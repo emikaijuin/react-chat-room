@@ -11,13 +11,17 @@ class ChatRoom extends Component {
       messages: [],
       activeConversationId: "all",
       username: '',
-      members: []
+      members: [],
+      shake: false
     }
 
     Socket.emit('NEW_USER')
 
     Socket.on('RECEIVE_BROADCAST', data => {
       this.appendMessage(data)
+      this.setState({
+        shake: true
+      })
     })
 
     Socket.on('GET_CURRENT_USER', user => {
@@ -28,7 +32,9 @@ class ChatRoom extends Component {
       let usernames = users.map(user => (
         user.username
       ))
-      this.setState({members: usernames})
+      this.setState({
+        members: usernames
+      })
     })
   }
 
@@ -105,6 +111,10 @@ class ChatRoom extends Component {
     })
   }
 
+  removeShake = () => {
+    this.setState({shake: false})
+  }
+
   render() {
     return (
       <div className="chat-room" >
@@ -113,6 +123,8 @@ class ChatRoom extends Component {
             selectActiveConversation = { this.selectActiveConversation }
             conversations = { this.getUserConversations() } 
             activeConversationId = { this.state.activeConversationId }
+            shake = {this.state.shake}
+            removeShake = {this.removeShake}
           />
         </div>
         <div className="messages-container">

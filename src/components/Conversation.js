@@ -19,6 +19,10 @@ class Conversation extends Component {
     </div>
   )
 
+  // componentDidUpdate() {
+  //   setTimeout(() => {this.props.removeShake()}, 5000) // this doesn't really work, find another way to remove class after animation ends
+  // }
+
   render() {
     return (
       <li 
@@ -43,15 +47,22 @@ class Conversation extends Component {
             className = "conversation-avatar"
             src = {`https://api.adorable.io/avatars/112/${this.props.conversation.members}.png`}
             style = {{
-              height: "100%",
+              maxHeight: "2rem",
+              maxWidth: "2rem",
+              height: "125%",
               borderRadius: "100%"
             }}
           />
-          <div className = {`conversation-name ${this.props.isActive ? "active-conversation" : ""}`}
+          <div className = {`
+            conversation-name 
+            ${this.props.isActive ? "active-conversation" : ""}
+            ${this.props.shake && this.props.isActive ? "active-conversation-shake" : ""} 
+          `}
             style = {{
               padding: "10px 0"
             }}
             id = {this.props.conversation.id}
+            // onAnimationEnd = {this.props.shake && this.props.isActive ? this.props.removeShake() : () => {}}
           > 
             { this.props.conversation.name ? this.props.conversation.name : this.props.conversation.members.join(" & ") }
           </div>
